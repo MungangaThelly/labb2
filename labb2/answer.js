@@ -56,15 +56,26 @@ console.log("Ready to begin.");
  * Write your code below and put the answer into the variable ANSWER.
  */
 
-
-
- 
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+    function sumRangeNumbers(lowest, highest) {
+        // Ensure low is less than or equal to high
+        if (lowest > highest) {
+            [lowest, highest] = [highest, lowest];
+        }
+        let sum = 0;
+        for (let i = lowest; i <= highest; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+    
+    // Test the function with the values 22 and 91
+    const answer = sumRangeNumbers(22, 91);
+    console.log(answer);
+    
+    ANSWER = answer; // the answer is assigned into the variable ANSWER
 
 // I will now test your answer - change false to true to get a hint.
-dbwebb.assert("1.1", ANSWER, false);
+dbwebb.assert("1.1", ANSWER, true);
 
 /**
  * Exercise 1.2 (1 points)
@@ -79,16 +90,23 @@ dbwebb.assert("1.1", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function fruitColor(fruit) {
+    const fruitColors = {
+        banana: 'yellow',
+        apple: 'green',
+        kiwi: 'green',
+        plum: 'red'
+    };
+    return fruitColors[fruit] || null; // // Returns null if the fruit is not found
+}
 
-
-
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+// Testing the function with the fruit 'plum'
+const result = fruitColor('plum');
+console.log(result)
+ANSWER = result; // the answer is assigned into the variable ANSWER
 
 // I will now test your answer - change false to true to get a hint.
-dbwebb.assert("1.2", ANSWER, false);
+dbwebb.assert("1.2", ANSWER, true);
 
 /**
  * Exercise 1.3 (1 points)
