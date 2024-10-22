@@ -7,19 +7,15 @@
 </head>
 <body>
     <script>
-        function fruitColor(fruit) {
-    const fruitColors = {
-        banana: 'yellow',
-        apple: 'green',
-        kiwi: 'green',
-        plum: 'red'
-    };
-    return fruitColors[fruit];
+       function calculateInterest(principal, years, rate) {
+    const amount = principal * Math.pow(1 + rate / 100, years);
+    return parseFloat(amount.toFixed(4)); // Round to 4 decimals
 }
 
-// Testing the function with the fruit 'plum'
-const answer = fruitColor('plum');
-console.log(answer)
+const result = calculateInterest(745, 31, 5);
+console.log(result); // Outputs the result
+
+
     
     </Script>
     

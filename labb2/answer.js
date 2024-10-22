@@ -121,8 +121,16 @@ dbwebb.assert("1.2", ANSWER, true);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function printRange(rangeStart, rangeStop) {
+    let result = ''
+    for (let i = rangeStart; i <= rangeStop; i++) {
+        result += i + ','
+    }
+    return result.slice(0, -1)
+}
 
-
+ANSWER = printRange(25, 46)
+console.log.apply(ANSWER)
 
 
 
@@ -145,8 +153,16 @@ dbwebb.assert("1.3", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function printRangeReversed(rangeStart, rangeStop) {
+    let result = ''
+    for (let i = rangeStart; i >= rangeStop; i--) {
+        result += i + ','
+    }
+    return result.slice(0, -1)
+}
 
-
+result = printRangeReversed(46, 25);
+console.log(result);
 
 
 
@@ -175,7 +191,18 @@ dbwebb.assert("1.4", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function printAnyRange(rangeStart, rangeStop) {
+    if (rangeStart < rangeStop) {
+        return printRange(rangeStart, rangeStop)
+    }
 
+    if (rangeStart > rangeStop) {
+        return printRangeReversed(rangeStart, rangeStop)
+    }
+    return 'Cant be equal'
+}
+answer = printAnyRange(25, 46);
+console.log(answer);
 
 
 
@@ -198,8 +225,15 @@ dbwebb.assert("1.5", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
-
-
+function stringRepeat(string, repeat) {
+    let result = '';
+    for (let i = 0; i < repeat; i++) {
+    result += string
+    }
+    return result
+}
+answer =stringRepeat('gray', 12)
+console.log(answer)
 
 
 
@@ -225,7 +259,15 @@ dbwebb.assert("1.6", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
-
+function inRange(rangeStart, rangeStop, value) {
+    if (value > rangeStart && value < rangeStop) {
+        return true
+    } else {
+        returnfalse
+    }
+}
+answer = inRange(131, 547, 434);
+console.log(answer);
 
 
 
@@ -269,8 +311,13 @@ dbwebb.assert("1.8", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+function degreesToRadians(degrees) {
+    let radians = degrees * Math.PI/180
 
-
+    return Number(radians.toFixed(4))
+}
+answer = degreesToRadians(32);
+console.log(answer)
 
 
 
@@ -298,9 +345,31 @@ dbwebb.assert("1.9", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function fizzBuzz(start, stop) {
+    if (stop <= start) {
+        return 'Error: stop must be greater than start.';
+    }
 
+    let result = [];
 
- 
+    for (let i = start; i <= stop; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            result.push('FizzBuzz');
+        } else if (i % 3 === 0) {
+            result.push('Fizz');
+        } else if (i % 5 === 0) {
+            result.push('Buzz');
+        } else {
+            result.push(i);
+        }
+    }
+
+    return result.join(','); // Join the array with commas
+}
+
+const ANSWER = fizzBuzz(1, 30);
+console.log(ANSWER); // Outputs the result
+
 
 
 
@@ -371,6 +440,26 @@ dbwebb.assert("2.1", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function printResult(playeTotal, dealerTotal) {
+    let playerResult = ''
+    let dealerTotal = ''
+
+    if (playerTotal === 21) {
+        playerResult = 'black kack'
+    } else if (playerTotal < 21) {
+        playerResult = 'safe'
+    } else if (delearTotal < 17) {
+        dealerResult
+    }
+}
+let playerCard1 = 4;
+let playerCard2 = 10;
+let playerCard3 = 3;
+
+let dealerCard1 = 3;
+let dealerCard2 = 6;
+let dealerCard3 = 11;
+
 
 
 
@@ -395,10 +484,13 @@ dbwebb.assert("2.2", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+function calculateInterest(principal, years, rate) {
+    const amount = principal * Math.pow(1 + rate / 100, years);
+    return parseFloat(amount.toFixed(4)); // Round to 4 decimals
+}
 
-
-
-
+const result = calculateInterest(745, 31, 5);
+console.log(result); // Outputs the result
 
 
 ANSWER = "Replace this text with the variable holding the answer.";
